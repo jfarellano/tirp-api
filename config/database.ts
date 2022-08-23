@@ -54,8 +54,20 @@ const databaseConfig: DatabaseConfig = {
         paths: ['./database/seeders/MainSeeder']
       }
     },
-
+    pg: {
+      client: 'pg',
+      connection: Env.get('DATABASE_URL'),
+      migrations: {
+        naturalSort: true,
+      },
+      seeders: {
+        paths: ['./database/seeders/MainSeeder']
+      },
+      healthCheck: false,
+      debug: false
+    },
   }
 }
+
 
 export default databaseConfig
