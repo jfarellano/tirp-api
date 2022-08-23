@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { afterFetch, afterFind, BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import Answers from 'Contracts/enums/Answers'
 import User from './User'
 import Tour from './Tour'
