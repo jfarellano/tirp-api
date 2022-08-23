@@ -56,7 +56,7 @@ const databaseConfig: DatabaseConfig = {
     },
     pg: {
       client: 'pg',
-      connection: Env.get('DATABASE_URL'),
+      connection: Env.get('DATABASE_URL') + '?ssl=no-verify',
       migrations: {
         naturalSort: true,
       },
@@ -64,7 +64,7 @@ const databaseConfig: DatabaseConfig = {
         paths: ['./database/seeders/MainSeeder']
       },
       healthCheck: false,
-      debug: false
+      debug: false,
     },
   }
 }
