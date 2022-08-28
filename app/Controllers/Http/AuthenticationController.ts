@@ -5,7 +5,7 @@ import Responses from "App/Helpers/Responses"
 export default class AuthenticationController {
     async login({ auth, request, response }:HttpContextContract) {
         const credentials = request.only([ 'email', 'password'])
-        console.log( request.body )
+        console.log( request.body() )
         try {
             const token = await auth.use('api').attempt(credentials.email, credentials.password)
             return Responses.success({token})
