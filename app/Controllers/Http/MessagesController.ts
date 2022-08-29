@@ -38,9 +38,6 @@ export default class MessagesController {
         
         const tour = await Tour.findOrFail(attrs.tour_id)
 
-        if (user.id != tour.ownerId && user.id != tour.tirperId)
-            return Responses.error(response)
-
         const message = new Message()
 
         message.message = attrs.message
