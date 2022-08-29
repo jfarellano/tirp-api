@@ -20,7 +20,7 @@ export default class ToursController {
             '=',
             user.id
         ).preload('owner')
-            .preload('city')
+        .preload('city')
 
         for (const tour of tours) {
             if (tour.tirper) {

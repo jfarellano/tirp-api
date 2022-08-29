@@ -16,13 +16,13 @@ export default class UsersController {
         return Responses.success(users)
     }
 
-    async show({ params, response, auth, bouncer}) {
+    async show({ params, response, auth}) {
         await auth.use('api').authenticate()
         let user
-        let session = auth.use('api').user!
-        if( await bouncer.allows('isSelf', session) )
-            user = session
-        if ( await bouncer.allows('isAdmin') && params.id)
+        // let session = auth.use('api').user!
+        // if( await bouncer.allows('isSelf', session) )
+        //     user = session
+        // if ( await bouncer.allows('isAdmin') && params.id)
             user = await User.find(params.id)
         if (user)
             return Responses.success({
