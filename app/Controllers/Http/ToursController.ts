@@ -8,6 +8,7 @@ import Status from 'Contracts/enums/Status'
 import InvitationsHelper from 'App/Helpers/InvitationsHelper'
 import User from 'App/Models/User'
 import Invitation from 'App/Models/Invitation'
+import Review from 'App/Models/Review'
 
 
 export default class ToursController {
@@ -21,7 +22,6 @@ export default class ToursController {
             user.id
         ).preload('owner')
         .preload('city')
-        .preload('review')
 
         for (const tour of tours) {
             if (tour.tirper) {
@@ -30,7 +30,6 @@ export default class ToursController {
             if (tour.review) {
                 tour.load('review')
             }
-            tour.serialize()
         }
         return Responses.success(tours)
     }
