@@ -38,7 +38,7 @@ export default class RoutesController {
         
         const tour = await Tour.findOrFail(attrs.tour_id)
 
-        if (user.id != tour.tirperId || tour.status != Status.IN_TOUR)
+        if (user.id != tour.tirperId)
             return Responses.error(response)
 
         const route = new Route()

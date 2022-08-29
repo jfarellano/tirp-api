@@ -46,6 +46,7 @@ export default class ToursController {
                 user.id
             ).preload('owner')
             .preload('city')
+            .preload('tirper')
 
         if (tour[0]) {
             if (tour[0].tirper) {
