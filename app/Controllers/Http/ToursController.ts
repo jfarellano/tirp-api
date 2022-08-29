@@ -29,6 +29,7 @@ export default class ToursController {
             if (tour.review) {
                 tour.load('review')
             }
+            tour.serialize()
         }
         return Responses.success(tours)
     }
