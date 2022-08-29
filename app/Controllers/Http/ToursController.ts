@@ -26,6 +26,9 @@ export default class ToursController {
             if (tour.tirper) {
                 tour.load('tirper')
             }
+            if (tour.review) {
+                tour.load('review')
+            }
         }
         return Responses.success(tours)
     }
