@@ -2,7 +2,6 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Responses from "App/Helpers/Responses"
 import Tour from 'App/Models/Tour'
 import Route from 'App/Models/Route'
-import Status from 'Contracts/enums/Status'
 
 
 
