@@ -21,6 +21,7 @@ export default class ToursController {
             user.id
         ).preload('owner')
         .preload('city')
+        .preload('review')
 
         for (const tour of tours) {
             if (tour.tirper) {
